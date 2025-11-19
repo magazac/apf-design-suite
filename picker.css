@@ -1,0 +1,41 @@
+/* Styles; larger thumbnails using CSS var --apf-thumb */
+.apf-design-picker { border: 1px solid #eee; padding: 12px; border-radius: 12px; }
+.adp-label { display:block; font-weight:600; margin-bottom:6px; }
+.adp-name { width:100%; padding:8px; }
+.adp-suggestions { list-style:none; margin:8px 0 0; padding:0; border:1px solid #ddd; border-radius:8px; max-height:360px; overflow:auto; background:#fff; }
+.adp-sugg-item + .adp-sugg-item { border-top:1px solid #eee; }
+.adp-sugg-item button { display:flex; align-items:center; gap:12px; width:100%; padding:10px; background:#fff; border:0; cursor:pointer; text-align:left; }
+.adp-sugg-item button:hover { background:#f7f7f7; }
+.adp-sugg-item img { width:var(--apf-thumb, 72px); height:var(--apf-thumb, 72px); object-fit:cover; border-radius:8px; }
+.adp-sugg-item span { line-height:1.2; }
+.adp-mockup-wrap { position:relative; margin-top:10px; display:none; }
+.adp-overlay { position:absolute; left:0; top:0; width:100%; pointer-events:none; z-index:10; }
+
+/* v1.0.5 fixes */
+.apf-design-picker .adp-suggestions,
+.apf-design-picker .adp-suggestions li { list-style: none !important; }
+.apf-design-picker .adp-suggestions li::marker { content: '' !important; }
+.apf-design-picker .adp-sugg-item span { color:#000; font-weight:600; }
+.apf-design-picker .adp-overlay:not([src]) { display:none; }
+
+.apf-design-picker .adp-collection{ width:100%; padding:8px; margin:0 0 8px; }
+
+/* Collection gallery */
+.apf-collection-gallery{ background:#fff; border:1px solid #eee; border-radius:12px; padding:10px; margin-top:10px; max-height:var(--apf-gallery-h, 300px); overflow:auto; }
+.apf-collection-gallery .adp-gwrap{ display:grid; grid-template-columns: repeat(auto-fill, minmax(var(--apf-gthumb, 180px), 1fr)); gap:10px; }
+.apf-collection-gallery .adp-gitem{ background:#fff; border:1px solid #eaeaea; border-radius:10px; padding:8px; cursor:pointer; display:flex; flex-direction:column; align-items:center; transition:transform .15s ease; }
+.apf-collection-gallery .adp-gitem:hover{ transform:scale(1.03); }
+.apf-collection-gallery .adp-gitem img{ width:var(--apf-gthumb, 180px); height:var(--apf-gthumb, 180px); object-fit:cover; border-radius:8px; }
+.apf-collection-gallery .adp-gitem span{ margin-top:6px; font-size:12px; color:#000; text-align:center; word-break:break-word; }
+
+.apf-design-picker .adp-apply{ margin:6px 0 0 8px; padding:6px 10px; }
+
+.apf-design-picker .adp-apply{ display:none !important; }
+
+
+/* === APF 2.1.2 Artboard === */
+.apf-artboard{position:relative;width:100%;max-width:900px;aspect-ratio:1/1}
+.apf-artboard .wp-post-image,
+.apf-artboard .apf-mock{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:contain!important;max-width:none!important}
+.apf-artboard .apf-design{position:absolute;top:0;left:0;width:auto;height:auto;transform-origin:top left;pointer-events:none}
+
